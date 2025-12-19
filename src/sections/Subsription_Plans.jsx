@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Plans_card from '../components/Plans_card'
-import { SiGnome } from 'react-icons/si'
 
 const Subsription_Plans = () => {
 
