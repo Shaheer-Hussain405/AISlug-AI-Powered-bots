@@ -1,4 +1,5 @@
 import React, { useState , useRef, useEffect} from 'react'
+import { NavLink } from 'react-router-dom';
 import Logo from "../assets/logo.png"
 import { useLocation } from 'react-router-dom';
 import { FaAngleDown } from "react-icons/fa";
@@ -75,11 +76,11 @@ const StickyClass = `fixed w-full ${isSticky? "top-0":"-top-50 invisible"} durat
                 <ul className='flex gap-10 items-center'>
                     {navigations.map((item) =>(
                         <li key={item.id} className='group relative'>
-                            <a href={item.url} className={`cursor-pointer  font-semibold
+                            <NavLink to={item.url} className={`cursor-pointer  font-semibold
                                  py-3 px-1 text-[16px] flex items-center gap-1 ${location.pathname === item.url? "text-[#ff7a33] hover:text-[#ff7a33]": "group-hover:text-white text-[#949cba]" }`}>
                                 {item.name}
                                 {item.img}
-                            </a>
+                            </NavLink>
                             {item.toolData && <Dropdown bodium={item.toolData}/>}
                         </li>
                     ))}                
@@ -106,21 +107,21 @@ const StickyClass = `fixed w-full ${isSticky? "top-0":"-top-50 invisible"} durat
                     {navigations.map(item =>(
                         <li key={item.id} className='group relative text-xl'>
                             <div onClick={()=>{handelPageBar(item.id)}} className='w-full'>
-                            <a href={item.url} className='w-full flex items-center gap-2 py-3 p-1'>
+                            <NavLink to={item.url} className='w-full flex items-center gap-2 py-3 p-1'>
                                 {item.name}
                                 <span className={`${pageDropdown === item.id? "rotate-180":""} duration-150`}>
                                     {item.img}
                                 </span>
-                            </a>
+                            </NavLink>
                             {item.toolData && (
                                 <div className={`${pageDropdown === item.id ? `${item.class}`:"h-0"} origin-top overflow-hidden duration-300 transition-all`}>
                                     <ul className='w-full'>
                                         {item.toolData.map((data, index)=>(
                                             <li key={index} className='flex justify-start gap-3 my-2 text-start text-lg'>
                                                 <span className='ms-2 text-[#ff6c1e]'>|</span>
-                                                <a href={data.url} className='block w-full'>
+                                                <NavLink href={data.url} className='block w-full'>
                                                     {data.name}
-                                                </a>
+                                                </NavLink>
                                             </li>
                                         ))}
                                     </ul>
