@@ -66,10 +66,10 @@ const StickyClass = `fixed w-full ${isSticky? "top-0":"-top-50 invisible"} durat
     <main className={position === "sticky"? StickyClass:"sm:relative sm:bg-transparent bg-[#12122b] z-499 sticky top-0 left-0"}>
         <nav className={` ${position === "sticky"? "py-4":"py-7"} mb-1 mx-auto max-w-[85vw] flex justify-between items-center`}>
             <div className='text-[24px] font-semibold'>
-                <Link to="/" className='flex gap-3 items-end '>
+                <a href="/" className='flex gap-3 items-end '>
                     <img src={Logo} alt="Logo" className='w-8'/>
                     <h1>AI<span className='text-[#ff7a33]'>Slug</span></h1>
-                </Link>
+                </a>
             </div>
             <div className='Navigations lg:block hidden'>
                 <ul className='flex gap-10 items-center'>
