@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaStar } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa";
 
 
 const Review_Card = ({bodium = []}) => {
