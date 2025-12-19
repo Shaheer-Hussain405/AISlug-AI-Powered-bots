@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+*{
+    box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+    background-color: #111022;
+    color: white;
+    font-family: "Sora", sans-serif;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111022;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff7a33;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: gray;
+}

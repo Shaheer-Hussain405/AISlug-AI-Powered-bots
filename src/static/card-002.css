@@ -1,0 +1,68 @@
+.card-002{
+    background-image: url(../assets/Hero/graph_shape.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #12122b;
+}
+.card-004{
+    background-image: url(../assets/Hero/graph_shape_2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.graphics-111::before{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 1;
+    transform: translateX(2%);
+    border: 1px solid gray;
+    border-radius: 15px;
+    height: 80%;
+    width: 90%;
+}
+@media only screen and (min-width: 0) and (max-width: 400px){
+    .graphics-111::before{
+        height: 230px;
+    }
+}
+.hero_star{
+    z-index: -10;
+}
+.plans_button:hover .plans_effect{
+    scale: 1;
+}
+.effect_brand{
+    position: relative;
+}
+.effect_brand::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 0;
+    width: 100%;
+    transition: all 300ms ease;
+    background-color: #ff7a33;
+    z-index: -10;
+}
+.effect_brand:hover::after{
+    height: 100%;
+}
+.loader{
+    border: 5px solid #ff7a33;
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    animation: loading 1s ease  infinite ;
+}
+@keyframes loading {
+    0%{
+        scale: 0;
+        opacity: 1;
+    }
+    100%{
+        scale: 1;
+    }
+}
