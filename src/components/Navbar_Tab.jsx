@@ -16,15 +16,14 @@ const Mnav = useRef(null)
 const location = useLocation()
 
 const Page_navigations = [
-    {name: "career",url: "/"},
-    {name: "Detials",url: "/"},
-    {name: "Login",url: "/"},
-    {name: "Register",url: "/"},
+    {name: "career",url: "/career"},
+    {name: "Login",url: "/login"},
+    {name: "Register",url: "/signup"},
 ]
 const navigations = [
     {id:1,name: "Home",url: "/",},
     {id:2,name: "About",url: "/about"},
-    {id:3,name: "Pages",img: <FaAngleDown/>, toolData: Page_navigations ,class: "h-[140px]"},
+    {id:3,name: "Pages",urlSet:["/career","/details","/login","/signup"],img: <FaAngleDown/>, toolData: Page_navigations ,class: "h-[140px]"},
     {id:4,name: "FAQs", url: "/FAQs"},
     {id:5,name: "Contact",url: "/Contact"},
 ]  
@@ -36,8 +35,7 @@ const handelSidebar = () =>{
 
 const handelPageBar = (id) => {
     setPageDropdown(prev => prev === id? null : id)
-    setSidebar(false)
-
+    if (id !== 3) setSidebar(false)
 }
 
 useEffect(()=>{
@@ -59,7 +57,9 @@ useEffect(()=>{
         document.removeEventListener("mousedown", handelOutsideClick)
     }
 },[sidebar])
-
+useEffect(()=>{
+    window.scrollTo({top:0,behavior:"instant"})
+},[location])
 const StickyClass = `fixed w-full ${isSticky? "top-0":"-top-50 invisible"} duration-450 ease bg-[#12122b] z-999`
 
   return (
@@ -77,7 +77,7 @@ const StickyClass = `fixed w-full ${isSticky? "top-0":"-top-50 invisible"} durat
                     {navigations.map((item) =>(
                         <li key={item.id} className='group relative'>
                             <NavLink to={item.url} className={`cursor-pointer  font-semibold
-                                 py-3 px-1 text-[16px] flex items-center gap-1 ${location.pathname === item.url? "text-[#ff7a33] hover:text-[#ff7a33]": "group-hover:text-white text-[#949cba]" }`}>
+                                 py-1 px-1 text-[16px] flex items-center gap-1 underline_style ${location.pathname === item.url || item.urlSet?.includes(location.pathname)? "text-[#ff7a33] hover:text-[#ff7a33]": "group-hover:text-white text-[#949cba]" }`}>
                                 {item.name}
                                 {item.img}
                             </NavLink>
@@ -106,27 +106,27 @@ const StickyClass = `fixed w-full ${isSticky? "top-0":"-top-50 invisible"} durat
                 <ul>
                     {navigations.map(item =>(
                         <li key={item.id} className='group relative text-xl'>
-                            <div onClick={()=>{handelPageBar(item.id)}} className='w-full'>
-                            <NavLink to={item.url} className='w-full flex items-center gap-2 py-3 p-1'>
-                                {item.name}
-                                <span className={`${pageDropdown === item.id? "rotate-180":""} duration-150`}>
-                                    {item.img}
-                                </span>
-                            </NavLink>
-                            {item.toolData && (
-                                <div className={`${pageDropdown === item.id ? `${item.class}`:"h-0"} origin-top overflow-hidden duration-300 transition-all`}>
-                                    <ul className='w-full'>
-                                        {item.toolData.map((data, index)=>(
-                                            <li key={index} className='flex justify-start gap-3 my-2 text-start text-lg'>
-                                                <span className='ms-2 text-[#ff6c1e]'>|</span>
-                                                <NavLink href={data.url} className='block w-full'>
-                                                    {data.name}
-                                                </NavLink>
-                                            </li>
-                                        ))}
-                                    </ul>
-                               </div>
-                            )}  
+                            <div className='w-full'>
+                                <NavLink to={item.url} onClick={()=>{handelPageBar(item.id)}} className='w-full flex items-center gap-2 py-3 p-1'>
+                                    {item.name}
+                                    <span className={`${pageDropdown === item.id? "rotate-180":""} duration-150`}>
+                                        {item.img}
+                                    </span>
+                                </NavLink>
+                                {item.toolData && (
+                                    <div className={`${pageDropdown === item.id ? `${item.class}`:"h-0"} origin-top overflow-hidden duration-300 transition-all`}>
+                                        <ul className='w-full'>
+                                            {item.toolData.map((data, index)=>(
+                                                <li key={index} className='flex justify-start gap-3 my-2 text-start text-lg'>
+                                                    <NavLink onClick={()=>{handelSidebar()}} to={data.url} className={({isActive})=> `${isActive? "text-[#ff7a33]":"text-gray-400"} w-full flex justify-start gap-3`}>
+                                                    <span className='ms-2'>|</span>
+                                                        {data.name}
+                                                    </NavLink>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                   </div>
+                                )}  
                             </div>
                         </li>
                     ))}

@@ -2,7 +2,7 @@ import React from 'react'
 import { MdArrowOutward } from "react-icons/md";
 
 
-const About_details = () => {
+const About_details = ({bodium = []}) => {
   return (
     <>
     <section className='Trial_port mx-3 mt-10'>
@@ -14,10 +14,10 @@ const About_details = () => {
     
                     <div className='card-004 flex flex-col gap-5 p-5'>
                         <div className='tag text-[#ff7a33] font-bold font-md text-center'>
-                            <span>About AISlug</span>
+                            <span>{bodium.tag}</span>
                         </div>
                         <div className='md:text-4xl text-2xl  font-semibold text-center md:leading-12'>
-                            <h1>A Magical Tool For Seamless<br/>Collaboration</h1>
+                            <h1>{bodium.title}</h1>
                         </div>
                         <div className='text-md text-gray-400 text-center'>
                             <p>Mastering the Art of AI Tool: Unleashing the Power of Automated<br/>Creativity with AISlug</p>

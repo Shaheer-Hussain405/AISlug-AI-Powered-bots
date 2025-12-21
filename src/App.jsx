@@ -7,6 +7,7 @@ import "./static/card-002.css"
 
 const Home = lazy(()=> import("./Pages/Home"))
 const About = lazy(()=> import("./Pages/About"))
+const Career = lazy(()=> import("./Pages/Career"))
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
+        <Route path='/career' element={<Career/>}/>
       </Routes>
       </Suspense>
     </main>

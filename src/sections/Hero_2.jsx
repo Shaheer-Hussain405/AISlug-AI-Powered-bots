@@ -2,14 +2,14 @@ import React from 'react'
 import Rating from '../components/Ratings'
 import About_img from "../assets/About/About_Hero_Img.jpg"
 
-const About_Hero = () => {
+const Hero_2 = () => {
   return (
     <>
     <section className='About_hero mt-10'>
         <main className='conatiner mx-auto grid lg:grid-cols-[45%_55%] grid-cols-1'>
             <div className='flex flex-col justify-center lg:gap-5 gap-8 lg:my-0 my-6 lg:mr-10 px-8 lg:order-1 order-2 lg:text-start text-center'>
                 <div className='sm:text-4xl text-2xl font-semibold'>
-                    <h1>Create Something New with AIMug, that are simple to use</h1>
+                    <h1>Create Something New with AISlug, that are simple to use</h1>
                 </div>
                 <div className='text-sm text-gray-400'>
                     <p>There are more than 80+ use cases and templates to pick from to meet all of your writing demands. Let’s Communicate with your customers with emotions</p>
@@ -30,4 +30,4 @@ const About_Hero = () => {
   )
 }
 
-export default About_Hero
+export default Hero_2
