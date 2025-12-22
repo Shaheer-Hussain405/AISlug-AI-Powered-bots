@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { FaPlus } from "react-icons/fa6";
 import { CiCircleCheck } from "react-icons/ci";
 import AI_view from "../assets/Writing/ai_VIEW.jpg"
@@ -111,7 +112,7 @@ const Generative_AI = () => {
                     </div>
                     <div>
                       <div className='my-2 flex items-center lg:justify-start justify-center'>
-                          <button className='cursor-pointer flex items-center gap-3 bg-[#7173ff] py-3 px-5 rounded-lg text-sm font-semibold'><FaPlus/>Get Started</button>
+                          <NavLink to="/login" className='cursor-pointer flex items-center gap-3 bg-[#7173ff] py-3 px-5 rounded-lg text-sm font-semibold'><FaPlus/>Get Started</NavLink>
                       </div>
                     </div>
                 </div>
@@ -175,7 +176,7 @@ const Generative_AI = () => {
                     </div>
                     <div>
                       <div className='my-2 flex items-center lg:justify-start justify-center'>
-                          <button className='cursor-pointer flex items-center gap-3 bg-[#7173ff] py-4 px-7 rounded-lg text-sm font-semibold'><FaPlus/>Get Started</button>
+                          <NavLink to="/login" className='cursor-pointer flex items-center gap-3 bg-[#7173ff] py-4 px-7 rounded-lg text-sm font-semibold'><FaPlus/>Get Started</NavLink>
                       </div>
                     </div>
                 </div>

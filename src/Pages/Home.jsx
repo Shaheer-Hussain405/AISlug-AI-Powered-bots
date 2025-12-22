@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Navbar_Compressed from '../sections/Navbar'
 import Hero from '../sections/Hero'
 import All_Featured from '../sections/All_Featured'
 import Generative_AI from '../sections/Generative_AI'
@@ -17,6 +18,7 @@ const Home = () => {
   return (
     <>
     <main className='relative'>
+      <Navbar_Compressed/>
       <Hero />
       <All_Featured />
       <Generative_AI/>

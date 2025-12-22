@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import { MdArrowOutward } from "react-icons/md";
 
 
@@ -24,7 +25,7 @@ const Trial = () => {
                         <p>Choose a topic & create something better than before, get started from today.<br/>No Credit Card Required</p>
                     </div>
                     <div className='flex justify-center'>
-                        <button className='cursor-pointer flex items-center gap-3 bg-[#7173ff] py-4 px-7 rounded-lg text-sm font-semibold'>Get Started <MdArrowOutward/></button>
+                        <NavLink to="/login" className='cursor-pointer flex items-center gap-3 bg-[#7173ff] py-4 px-7 rounded-lg text-sm font-semibold'>Get Started <MdArrowOutward/></NavLink>
                     </div>
                 </div>
             </div>

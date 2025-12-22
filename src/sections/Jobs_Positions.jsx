@@ -7,8 +7,7 @@ import img_4 from "../assets/Jobs_Card/data-4.png"
 import img_5 from "../assets/Jobs_Card/data-5.png"
 import img_6 from "../assets/Jobs_Card/data-6.png"
 import img_flag from "../assets/Jobs_Card/Pak_flag.png"
-import { MdOutlineArrowForwardIos } from "react-icons/md";
-
+import Paginations from '../components/paginations';
 
 const Jobs_Positions = () => {
 
@@ -76,7 +75,6 @@ const jobs = [
     country: "Pakistan",
   },
 ];
-const pages = [1,2,3,4,<MdOutlineArrowForwardIos/>]
   return (
     <>
     <section className='Jobs_port mt-8 mx-3'>
@@ -96,13 +94,7 @@ const pages = [1,2,3,4,<MdOutlineArrowForwardIos/>]
                         <Jobs_Card bodium={data}/>
                     ))}
                 </div>
-                <div className='flex justify-center gap-4'>
-                    {pages.map((data)=>(
-                        <button className='duration-200 hover:bg-blue-600/90 hover:border-blue-600/90 h-10 w-10 border cursor-pointer border-gray-600 rounded-md bg-[#15152E] flex justify-center items-center'>
-                            {data}
-                        </button>
-                    ))}
-                </div>
+                <Paginations/>
             </div>
         </main>
     </section>

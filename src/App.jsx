@@ -1,24 +1,28 @@
 import React from 'react'
 import { Suspense,lazy } from 'react';
 import { Routes, Route } from "react-router-dom";
-import Navbar_Compressed from './sections/Navbar'
 import LoadingData from './components/LoadingData';
 import "./static/card-002.css"
 
 const Home = lazy(()=> import("./Pages/Home"))
 const About = lazy(()=> import("./Pages/About"))
 const Career = lazy(()=> import("./Pages/Career"))
+const Blogs = lazy(()=> import("./Pages/Blogs"))
+const Login = lazy(()=> import("./Pages/Login"))
+const Signup = lazy(()=> import("./Pages/Signup"))
 
 const App = () => {
   return (
     <>
     <main className='relative'>
-      <Navbar_Compressed/>
       <Suspense fallback={<LoadingData/>}>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/career' element={<Career/>}/>
+        <Route path='/blogs' element={<Blogs/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/signup' element={<Signup/>}/>
       </Routes>
       </Suspense>
     </main>

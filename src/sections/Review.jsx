@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import brand_1 from "../assets/Trust/brand-logo-1.png"
 import brand_2 from "../assets/Trust/brand-logo-2.png"
 import brand_3 from "../assets/Trust/brand-logo-3.png"
@@ -167,7 +168,7 @@ const Reviews_jar = [
                 </div>
                 <div className='absolute bottom-0 left-0 w-full bg-[linear-gradient(180deg,_transparent,#111022,#111022)] h-60'></div>
                 <div className='absolute bottom-10 left-0 w-full flex justify-center'>
-                    <button className='cursor-pointer flex items-center gap-3 bg-[#7173ff] py-4 px-7 rounded-lg text-sm font-semibold'><FaPlus/>Get Started</button>
+                    <NavLink to="/login" className='cursor-pointer flex items-center gap-3 bg-[#7173ff] py-4 px-7 rounded-lg text-sm font-semibold'><FaPlus/>Get Started</NavLink>
                 </div>
             </div>
         </main>

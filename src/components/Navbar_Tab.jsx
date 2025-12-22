@@ -24,7 +24,7 @@ const navigations = [
     {id:1,name: "Home",url: "/",},
     {id:2,name: "About",url: "/about"},
     {id:3,name: "Pages",urlSet:["/career","/details","/login","/signup"],img: <FaAngleDown/>, toolData: Page_navigations ,class: "h-[140px]"},
-    {id:4,name: "FAQs", url: "/FAQs"},
+    {id:4,name: "Blogs", url: "/blogs"},
     {id:5,name: "Contact",url: "/Contact"},
 ]  
 
@@ -88,8 +88,8 @@ const StickyClass = `fixed w-full ${isSticky? "top-0":"-top-50 invisible"} durat
                 </ul>
             </div>
             <div className='sm:flex hidden items-center gap-3 font-semibold text-[#949cba]'>
-                <button className='cursor-pointer py-2 px-6 rounded-xl border-transparent border hover:border-[#ff6c1e] hover:text-[#ff6c1e] duration-150'>Login</button>
-                <button className='cursor-pointer py-2 px-6 rounded-xl border-transparent border hover:border-[#ff6c1e] hover:text-[#ff6c1e] duration-150'>Signup</button>
+                <NavLink to="/login" className='cursor-pointer py-2 px-6 rounded-xl border-transparent border hover:border-[#ff6c1e] hover:text-[#ff6c1e] duration-150'>Login</NavLink>
+                <NavLink to="/signup" className='cursor-pointer py-2 px-6 rounded-xl border-transparent border hover:border-[#ff6c1e] hover:text-[#ff6c1e] duration-150'>Signup</NavLink>
             </div>
             <div className='sm:hidden text-2xl'>
                 <button onClick={handelSidebar} className='cursor-pointer border-0 p-2'>

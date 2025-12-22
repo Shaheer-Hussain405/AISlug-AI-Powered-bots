@@ -124,3 +124,9 @@
     transform: scaleX(1);
     transform-origin: top;
 }
+.bg-LS{
+    background-image: url(../assets/Login/data-bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

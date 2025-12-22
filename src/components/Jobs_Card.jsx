@@ -1,5 +1,6 @@
 import React from 'react'
 import { FiArrowUpRight } from "react-icons/fi";
+import { NavLink } from 'react-router-dom';
 
 const Jobs_Card = ({bodium = []}) => {
   return (
@@ -27,10 +28,10 @@ const Jobs_Card = ({bodium = []}) => {
                 </div>
             </div>
             <div className='flex md:flex-col sm:flex-row flex-col md:justify-start justify-between items-center gap-3'>
-                <button className='bg-[#6d73ff] cursor-pointer active:scale-98 rounded-lg py-3 px-4 font-semibold flex items-center gap-2 text-sm'>
+                <NavLink to="/login" className='bg-[#6d73ff] cursor-pointer active:scale-98 rounded-lg py-3 px-4 font-semibold flex items-center gap-2 text-sm'>
                     <span>Apply job</span>
                     <span className='text-xl'><FiArrowUpRight/></span>
-                </button>
+                </NavLink>
                 <p className='text-gray-400 sm:text-md text-sm'>{bodium.posted_time}</p>
             </div>
         </div>

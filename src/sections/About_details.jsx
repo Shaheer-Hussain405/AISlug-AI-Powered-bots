@@ -1,8 +1,9 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import { MdArrowOutward } from "react-icons/md";
 
 
-const About_details = ({bodium = []}) => {
+const About_details = ({bodium = [],button = true}) => {
   return (
     <>
     <section className='Trial_port mx-3 mt-10'>
@@ -22,9 +23,10 @@ const About_details = ({bodium = []}) => {
                         <div className='text-md text-gray-400 text-center'>
                             <p>Mastering the Art of AI Tool: Unleashing the Power of Automated<br/>Creativity with AISlug</p>
                         </div>
+                        {button &&
                         <div className='flex justify-center'>
-                            <button className='cursor-pointer flex items-center gap-3 bg-[#7173ff] py-4 px-7 rounded-lg text-sm font-semibold'>Get Started <MdArrowOutward/></button>
-                        </div>
+                            <NavLink to="/login" className='cursor-pointer flex items-center gap-3 bg-[#7173ff] py-4 px-7 rounded-lg text-sm font-semibold'>Get Started <MdArrowOutward/></NavLink>
+                        </div>}
                     </div>
                 </div>
             </main>

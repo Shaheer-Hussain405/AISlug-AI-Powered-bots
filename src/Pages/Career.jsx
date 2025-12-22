@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar_Compressed from '../sections/Navbar'
 import About_details from '../sections/About_details'
 import Hero_2 from '../sections/Hero_2'
 import Trust from '../sections/Trust'
@@ -16,6 +17,7 @@ const Career = () => {
   return (
     <>
     <main className='relative'>
+        <Navbar_Compressed/>
         <About_details bodium={About_Info}/>
         <Hero_2/>
         <Trust/>

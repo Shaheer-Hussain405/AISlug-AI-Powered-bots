@@ -1,4 +1,5 @@
 import React from 'react'
+import Navbar_Compressed from '../sections/Navbar'
 import About_details from '../sections/About_details'
 import About_Hero from '../sections/Hero_2'
 import Trust from '../sections/Trust'
@@ -20,6 +21,7 @@ const About = () => {
   return (
     <>
     <main className='reltaive'>
+        <Navbar_Compressed/>
         <About_details bodium={About_Info}/>
         <About_Hero/>
         <Trust/>

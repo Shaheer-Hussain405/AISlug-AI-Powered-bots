@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import { MdArrowOutward } from "react-icons/md";
 import FHC from '../components/Featured_Hero_card';
 import Cntnt_writing from "../assets/Hero/content_writing.png"
@@ -20,7 +21,7 @@ const Hero = () => {
                 <h1>Explore the Possibilities of<br/> AI 🤖 with <span className='effect_brand group '>AI<span className='text-[#ff7a33]  group-hover:text-white duration-300'>Slug</span></span></h1>
             </div>
             <div className='my-2 flex items-center justify-center'>
-                <button className='cursor-pointer flex items-center gap-3 bg-[#7173ff] py-3 px-5 rounded-lg text-sm font-semibold'>Get Started <MdArrowOutward/></button>
+                <NavLink to="/login" className='cursor-pointer flex items-center gap-3 bg-[#7173ff] py-3 px-5 rounded-lg text-sm font-semibold'>Get Started <MdArrowOutward/></NavLink>
             </div>
 
             {/* || Featured Her Parent || */}
