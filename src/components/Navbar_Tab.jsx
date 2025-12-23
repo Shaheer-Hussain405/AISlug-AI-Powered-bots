@@ -98,7 +98,7 @@ const StickyClass = `fixed w-full ${isSticky? "top-0":"-top-50 invisible"} durat
             </div>
         </nav>
         {/* Mobile Respone Nav_Side  */}
-        <nav ref={Mnav} className={`${sidebar? "w-60 border-s border-b px-2":"w-0"} overflow-hidden fixed top-0 right-0 h-screen duration-300 bg-black/80 py-10 rounded-bl-2xl border-gray-500 z-399`}>
+        <nav ref={Mnav} className={`${sidebar? "translate-x-0 border-s border-b px-2":"translate-x-[100%]"} w-60  overflow-hidden fixed top-0 right-0 h-screen duration-300 bg-black/80 py-10 rounded-bl-2xl border-gray-500 z-399`}>
             <div className='flex justify-end mr-6 text-2xl'>
                 <button onClick={handelSidebar}><ImExit/></button>
             </div>

@@ -157,7 +157,7 @@ const Reviews_jar = [
                     <h5>Customer Stories</h5>
                 </div>
                 <div className='lg:text-4xl text-2xl font-semibold text-center'>
-                    <h2>AIMug. Received ⭐ 4.8/5 Stars{mobileView === 12 && <br/>} in Over 10,000+ Reviews.</h2>
+                    <h2>AISlug. Received ⭐ 4.8/5 Stars{mobileView === 12 && <br/>} in Over 10,000+ Reviews.</h2>
                 </div>
                 <div className='Customer_Reviews mt-10'>
                     <div className='grid lg:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-3'>

@@ -16,7 +16,7 @@ const Login = () => {
     <Navbar_Compressed/>
         <main className='h-[530px] container mx-auto w-full text-black'>
             <div className='flex justify-center h-full'>
-                <div className='bg-white rounded-2xl md:p-10 p-5 w-[600px] flex flex-col justify-between'>                
+                <div className='bg-white sm:rounded-2xl md:p-10 p-5 w-[600px] flex flex-col justify-between '>                
                     <div className='flex flex-col gap-6'>
                         <div className='text-center Brand text-2xl font-bold'>
                             <span className='text-[#ff7a33]'>AISlug</span>
