@@ -7,6 +7,12 @@ import { FiSidebar } from "react-icons/fi";
 import { ImExit } from "react-icons/im";
 import Dropdown from './Dropdown';
 
+import { IoHome } from "react-icons/io5";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { RiPagesFill } from "react-icons/ri";
+import { MdArticle } from "react-icons/md";
+import { MdContacts } from "react-icons/md";
+
 const Navbar_Tab = ({position = "relative", isSticky}) => {
     
 const [sidebar, setSidebar] = useState(false)
@@ -21,16 +27,16 @@ const Page_navigations = [
     {name: "Register",url: "/signup"},
 ]
 const navigations = [
-    {id:1,name: "Home",url: "/",},
-    {id:2,name: "About",url: "/about"},
-    {id:3,name: "Pages",urlSet:["/career","/details","/login","/signup"],img: <FaAngleDown/>, toolData: Page_navigations ,class: "h-[140px]"},
-    {id:4,name: "Blogs", url: "/blogs"},
-    {id:5,name: "Contact",url: "/Contact"},
+    {id:1,name: "Home",url: "/",logo: <IoHome/>},
+    {id:2,name: "About",url: "/about",logo:<FaPeopleGroup/>},
+    {id:3,name: "Pages",urlSet:["/career","/details","/login","/signup"],img: <FaAngleDown/>, toolData: Page_navigations ,class: "h-[130px]", logo:<RiPagesFill/>},
+    {id:4,name: "Blogs", url: "/blogs",logo:<MdArticle/>},
+    {id:5,name: "Contact",url: "/Contact",logo: <MdContacts/>},
 ]  
 
 const handelSidebar = () =>{
     setSidebar(!sidebar)
-    setPageDropdown(null)
+    // setPageDropdown(null)
 }
 
 const handelPageBar = (id) => {
@@ -42,7 +48,7 @@ useEffect(()=>{
     const handelOutsideClick = (e) =>{
         if (sidebar && Mnav.current && !Mnav.current.contains(e.target)){
             setSidebar(!sidebar)
-            setPageDropdown(null)
+            // setPageDropdown(null)
         }
     }
     const handelOutsideScroll = () =>{
@@ -98,27 +104,28 @@ const StickyClass = `fixed w-full ${isSticky? "top-0":"-top-50 invisible"} durat
             </div>
         </nav>
         {/* Mobile Respone Nav_Side  */}
-        <nav ref={Mnav} className={`${sidebar? "translate-x-0 border-s border-b px-2":"translate-x-[100%]"} w-60  overflow-hidden fixed top-0 right-0 h-screen duration-300 bg-black/80 py-10 rounded-bl-2xl border-gray-500 z-399`}>
+        <nav ref={Mnav} className={`${sidebar? "translate-x-0 px-2":"translate-x-[100%]"} w-60  overflow-hidden fixed top-0 right-0 h-screen duration-300 bg-[#12121a] py-10 rounded-bl-2xl rounded-tl-2xl border-gray-500 z-399`}>
             <div className='flex justify-end mr-6 text-2xl'>
                 <button onClick={handelSidebar}><ImExit/></button>
             </div>
             <div className='mt-5'>
                 <ul>
                     {navigations.map(item =>(
-                        <li key={item.id} className='group relative text-xl'>
+                        <li key={item.id} className='group relative sm:text-xl text-lg'>
                             <div className='w-full'>
-                                <NavLink to={item.url} onClick={()=>{handelPageBar(item.id)}} className='w-full flex items-center gap-2 py-3 p-1'>
+                                <NavLink to={item.url} onClick={()=>{handelPageBar(item.id)}} className={({isActive}) => `${isActive && !item.urlSet ? "bg-[#222534] text-blue-500":""} w-full flex items-center gap-3 p-3 rounded-lg`}>
+                                    {item.logo}
                                     {item.name}
                                     <span className={`${pageDropdown === item.id? "rotate-180":""} duration-150`}>
                                         {item.img}
                                     </span>
                                 </NavLink>
                                 {item.toolData && (
-                                    <div className={`${pageDropdown === item.id ? `${item.class}`:"h-0"} origin-top overflow-hidden duration-300 transition-all`}>
+                                    <div className={`${pageDropdown === item.id ? `${item.class}`:"h-0"} origin-top overflow-hidden duration-300 transition-all ms-3`}>
                                         <ul className='w-full'>
                                             {item.toolData.map((data, index)=>(
                                                 <li key={index} className='flex justify-start gap-3 my-2 text-start text-lg'>
-                                                    <NavLink onClick={()=>{handelSidebar()}} to={data.url} className={({isActive})=> `${isActive? "text-[#ff7a33]":"text-gray-400"} w-full flex justify-start gap-3`}>
+                                                    <NavLink onClick={()=>{handelSidebar()}} to={data.url} className={({isActive})=> `${isActive? "text-[#ff7a33]":"text-white"} w-full flex justify-start gap-3`}>
                                                     <span className='ms-2'>|</span>
                                                         {data.name}
                                                     </NavLink>
