@@ -73,12 +73,12 @@ const Subsription_Plans = () => {
                         <div className='hidden sm:block top-40 right-5 h-60 w-60 absolute bg-green-500 blur-[6rem] -z-5'></div>
 
                         <div className='relative'>
-                            <div className={`${isMonthly? "scale-100":"scale-0"} absolute w-full top-0 left-0 origin-top md:duration-800 duration-200 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6`}>
+                            <div className={`${isMonthly? "block":"hidden"} grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6`}>
                                 {monthlyPlans.map((data, index)=>(
                                     <Plans_card key={index} bodium={data}/>
                                 ))}
                             </div>
-                            <div className={`${isMonthly? "scale-0":"scale-100"} absoulute w-full top-0 left-0 origin-bottom md:duration-800 duration-200 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6`}>
+                            <div className={`${isMonthly? "hidden":"block"} w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-6`}>
                                 {monthlyPlans.map((data, index)=>(
                                     <Plans_card key={index} bodium={data} yearly={true}/>
                                 ))}
